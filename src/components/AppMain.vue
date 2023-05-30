@@ -1,4 +1,5 @@
 <script>
+import ProjectCard from './ProjectCard.vue';
 import axios from 'axios';
 export default {
     name: 'AppMain',
@@ -8,6 +9,11 @@ export default {
             baseUrl: 'http://localhost:8000',
 
         }
+    },
+    components: {
+        ProjectCard
+
+
     },
     methods: {
         getProgetto() {
@@ -29,6 +35,8 @@ export default {
 }
 </script>
 
-<template></template>
+<template>
+    <ProjectCard></ProjectCard>
+</template>
 
 <style></style>
