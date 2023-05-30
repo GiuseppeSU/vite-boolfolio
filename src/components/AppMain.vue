@@ -7,6 +7,8 @@ export default {
         return {
             progetti: [],
             baseUrl: 'http://localhost:8000',
+            currentPage: 1,
+            lastPage: null
 
         }
     },
@@ -16,11 +18,21 @@ export default {
 
     },
     methods: {
-        getProgetto() {
-            axios.get(`${this.baseUrl}/api/progetti`)
+        getProgetto(gotoPage) {
+            console.log('Ciao mondo!');
+
+            axios.get(`${this.baseUrl}/api/progetti`,
+                {
+                    params: {
+                        page: gotoPage
+                    }
+                }
+            )
                 .then(response => {
                     console.log(response);
-                    this.progetti = response.data.results;
+                    this.progetti = response.data.results.data;
+                    this.currentPage = response.data.results.current_page;
+                    this.lastPage = response.data.results.last_page;
 
                 });
 
@@ -42,12 +54,15 @@ export default {
             <div class="col-4" v-for="progetto in progetti">
                 <ProjectCard :cover_image="progetto.cover_image" :title="progetto.title" :name="progetto.name"
                     :content="progetto.content"></ProjectCard>
-
-
-
-
             </div>
-
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><button class="page-link" @click="getProgetto(currentPage - 1)"
+                            :class="{ 'disabled': currentPage == 1 }">Previous</button></li>
+                    <li class="page-item"><button class="page-link" @click="getProgetto(currentPage + 1)"
+                            :class="{ 'disabled': currentPage == lastPage }">Next</button></li>
+                </ul>
+            </nav>
         </div>
     </div>
 </template>
