@@ -36,7 +36,20 @@ export default {
 </script>
 
 <template>
-    <ProjectCard></ProjectCard>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-4" v-for="progetto in progetti">
+                <ProjectCard :cover_image="progetto.cover_image" :title="progetto.title" :name="progetto.name"
+                    :content="progetto.content"></ProjectCard>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
 </template>
 
 <style></style>
