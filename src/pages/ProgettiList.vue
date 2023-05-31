@@ -53,7 +53,7 @@ export default {
 
             <div class="col-4" v-for="progetto in progetti">
                 <ProjectCard :cover_image="progetto.cover_image" :title="progetto.title" :name="progetto.name"
-                    :content="progetto.content"></ProjectCard>
+                    :content="progetto.content" :slug="progetto.slug"></ProjectCard>
             </div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">

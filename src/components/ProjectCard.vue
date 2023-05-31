@@ -8,7 +8,8 @@ export default {
         cover_image: String,
         title: String,
         name: String,
-        content: String
+        content: String,
+        slug: String
 
 
     },
@@ -31,7 +32,9 @@ export default {
             <h5 class="card-title">{{ title }}</h5>
             <h5>{{ name }}</h5>
             <p class="card-text">{{ content }}</p>
-            <a href="#" class="btn btn-primary">Vedi post completo ... </a>
+            <router-link :to="{ name: 'single-progetto', params: { slug: slug } }" class="btn btn-primary">
+                Vedi post completo
+            </router-link>
         </div>
     </div>
 </template>
