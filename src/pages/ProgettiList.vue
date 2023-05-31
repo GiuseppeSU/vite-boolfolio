@@ -1,8 +1,8 @@
 <script>
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 import axios from 'axios';
 export default {
-    name: 'AppMain',
+    name: 'ProgettiList',
     data() {
         return {
             progetti: [],
