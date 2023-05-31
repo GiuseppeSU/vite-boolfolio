@@ -3,7 +3,7 @@ import AppHeader from './components/AppHeader.vue';
 export default {
   components: {
     AppHeader,
-    AppMain
+
 
   }
 }
@@ -13,7 +13,7 @@ export default {
 <template>
   <header>
     <AppHeader></AppHeader>
-    <route-view></route-view>
+    <router-view></router-view>
   </header>
 
 

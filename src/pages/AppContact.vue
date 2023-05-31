@@ -4,5 +4,6 @@ export default {
 }
 </script>
 
-
-<h1>Qui trovi tutti i contatti</h1>
+<template>
+    <h1>Qui trovi tutti i contatti</h1>
+</template>
