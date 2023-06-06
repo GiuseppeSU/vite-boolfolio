@@ -81,6 +81,7 @@ export default {
                     this.sending = false;
 
                 }).catch(error => { //>=400
+                    console.log(error)
                     this.sending = false;
                 });
 
