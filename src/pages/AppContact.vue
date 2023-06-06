@@ -1,9 +1,15 @@
 <script>
+import ContactForm from '../components/ContactForm.vue';
 export default {
-    name: 'AppContact'
+    name: 'AppContact',
+    components: {
+        ContactForm
+
+    }
 }
 </script>
 
 <template>
-    <h1>Qui trovi tutti i contatti</h1>
+    <h1>Contattami</h1>
+    <ContactForm></ContactForm>
 </template>
